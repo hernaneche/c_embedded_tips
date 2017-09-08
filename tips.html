@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8"/> 		<link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/black.css">        
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">			    
+                <section><h3>A lesson learned in life <br> Known from the dawn of time</h3>
+                    
+                </section>                    
+                <section><h4>Premature optimization is the root of all evil</h4>
+                </section>                            
+                <section>                                                 
+                 <h4>Belleza incremental..just say NO</h4>                    
+                    <ul>
+                    <li>   Primero el latido, detalles después</li>
+                        (mejor aún, nunca)<br>
+                    <li>El Origen es mítico, nunca causa-efecto</li>                    
+                    <li>"Causa y Efecto" cosa de historiadores, fábulas.</li>
+                    <li>Conexión con obra final es incomprensible.</li>                    
+                    </ul>
+                 </section>       
+                 <section>
+                    <h4>Belleza incremental..just say NO</h4>
+                     <i>"Así como &pi; no puede sospecharse entre los infinitos términos de una serie que la calcule, menos aún aparecer literalmente entre ellos; una gran obra nunca figura ni se deduce de los términos en la secuencia de construcción. La belleza de una persona no se encuentra entre los pliegues de los genitales peludos de sus progenitores, aunque hubieran sido necesarios durante el proceso de reproducción."</i>
+
+                 </section>
+                 
+                <section><h4>Pureza, independencia, desacople</h4><br>
+                    Fantasías
+                </section>								
+                <section><h4>Interdependencia Teórica</h4> 
+                    <img style="width:40%" src="img/mc_escher_bird_design_fragment0001.jpg" title="http://rstessellation.wikispaces.com/file/view/mc_escher_bird_design_fragment0001.jpg"><br>
+                    <img src="img/Pentagonal_tiling_type_9_animation.gif" title="https://en.wikipedia.org/wiki/Pentagonal_tiling#/media/File:Pentagonal_tiling_type_9_animation.gif">			  	
+                </section>					
+
+                <section><h4>Interdependencia Real</h4> 
+                <div>
+                <img src="img/PanteraProjectsInTheJungle.jpg" title="https://upload.wikimedia.org/wikipedia/en/thumb/7/73/PanteraProjectsInTheJungle.jpg/220px-PanteraProjectsInTheJungle.jpg">			  	
+                </div>
+                Projects in the Jungle<br>
+                </section>					
+                <section><h4>Tipos</h4>
+                    <ul>
+                    <li>Dan sentido al compilador (sino usar javascript o hacer diseño gráfico)</li>                
+                    <li>En C facilitan más al compilador para encajar con el micro, que al programador</li>
+                    <li>Tipos primitivos: evitar</li>
+                    </ul>
+                </section>
+
+                <section><h4>Tipos primitivos, casos necesarios</h4>                    
+                    
+                    <ul>
+                    <li>Para bytes, enteros, long usar &lt;stdint.h&gt;</li>                    
+                    <li>Para declarar tipos "compuestos" (typedef struct), disfraza a C de "fuertemente" tipado</li>                    
+                    </ul>
+                    <pre><code data-trim data-noescape>
+                    typedef struct {
+                        uint32_t pEn1;
+                        uint8_t falla;
+                    }EnergyData_t;
+                    </code></pre>                    
+                    No está de más repetir, <i>siempre</i> usar <b>&lt;stdint.h&gt;</b>
+                </section>                
+                <section>				
+                    <h4>const</h4>
+                    <i>const</i> siempre y en todos los argumentos, hasta que No compile nada. Partir de ahí.
+                </section>				  
+                <section><h4>Float, Double</h4>
+                    No usar.
+                </section>              
+                <section>
+                    <h4>Sleeps, retardos</h4>
+                    No usar.
+                </section>                              
+                <section>
+                    <h4>Threads</h4>
+                    No usar.
+                </section>
+                <section>
+                    <h4>for, loops</h4>
+                    1 solo.
+                </section>                
+                <section>
+                    <h4>if</h4>
+                    No usar, salvo necesidad extrema.<br>
+                </section>
+                <section><h3>Tipos Bit/Boolean</h3>
+                    No usar. False.
+                    <pre><code data-trim data-noescape>
+#define SETBIT(var, nbit) ((var)|=(1UL<<(nbit)))
+#define CLRBIT(var, nbit) ((var)&=(~(1UL<<(nbit))))
+#define BITAT(var, nbit) ((var)&(1<< (nbit)))
+                    </code></pre>
+                </section>
+                <section><h3>Para chequear 1 / 0</h3>
+                    <pre><code data-trim data-noescape>
+                    if ( x!=0 ), mejor que if ( x==0 ).
+                    </code></pre>
+                     Pero mejor aún constantes con nombres, enums, etc..
+                     Obviamente NO a los magic numbers.
+                    <pre><code data-trim data-noescape>
+                    if ( MUSICA != PANTERA  ) { 
+                       break;
+                    }
+                    </code></pre>
+                    código claro                    
+                </section>                       
+                <section>                                                               
+                    <h3><i>int</i> es enemigo, un mal innecesario</h3>
+                    Aceptarlo, conocerlo,  default en constantes, esa basura convivirá con C hasta que se extinga en el infierno.  
+                </section>                                                                                                       
+                <section>
+                    <h3>Periféricos, y DMA are friends</h3>
+                    Todo lo que se pueda hacer por Hardware mejor (hard EXTERNO, aún mejor) 
+                </section>				 
+                <section>
+                    <h3>RTOS vs not RTOS</h3>    
+                    La elección de la pastilla de matrix.
+                </section>
+                <section>
+                    <h3>Linux</h3>  
+                    Pastilla azul de matrix.
+                </section>
+                <section>
+                    <h3>IRQ's are friends</h3>
+                    Darle a la ISR tareas livianas, buffers, banderitas, pero nunca hard, ni write IO.
+                </section>				
+                <section>
+                    <h3>Hard IO</h3>
+                    Máquinas de estados. No excuses.
+                </section>
+                <section>	                                 
+                    <h3><i>functions</i> are best friends</h3>
+                    <ul>
+                    <li>Las funciones son para separar y componer, no para ocultar.</li>
+                    <li>Los nombres de las funciones son pistas de su función o inutilidad.</li>
+                    <li>Aprender a programar es sobretodo crear, nombrar y renombrar funciones.</li>
+                    </ul>
+                </section>
+                <section>	             
+                    <h3><i>Callbacks</i> are risky friends</h3>
+                    No usar, excepto en caso necesario.
+                </section>
+                <section>
+                    <h3>Recursividad</h3>
+                    No<br>                    
+                </section>
+                <section>
+                    <h3>Reserva dinámica de memoria</h3>
+                    No.
+                </section>
+                <section>
+                    <h3>Arrays, peligrosos</h3>
+                    Evitar, y si acaso, encapsular acceso donde sea posible.                    
+                </section>                
+                <section>
+                    <h3>Strings en C: peligrosos (son arrays)</h3>
+                    Mínimo: reemplazar todo uso de <b>strlen</b> por <b>strnlen</b><br>
+                </section>
+                <section>
+                    <h3>Estados</h3>
+                    NO. Ni globales, ni "static".<br>
+                    <br>
+                    Ok, admisibles algunos buffers y banderitas para que la amiga ISR nos informe.<br>                                        
+                </section>                
+                <section>
+                    <h3><i>inline</i> functions</h3>
+                    no confiar en el compilador.
+                </section>
+                <section>
+                    <h3><i>volatile</i></h3>                    
+                    no confiar en el compilador.<br> 
+                    volatile, ok, pero no evita accesos no-atómicos, no es para eso. <br>
+                    Solución : ninguna, salvo horrible disable IRQ, CRITICAL_SECTION's<br>
+                    Minimizar las variables compartidas con ISR
+               </section>
+            <section><h3>Varios</h3>
+                    <ul>                    
+                    <li> Usar git</li>
+                    <li> Manejo de dependencias, elegir simple de configurar, mudable.</li> 
+                    <li> Frameworks, no usar.</li>                 
+                    <li> Datos: JSON (world peace of data format), si se necesita DB, usar clásicas, viejas. Contratar a alguien.</li>
+                    </ul>
+            </section>
+                <section>
+                <h3>Futuro</h3>
+                No.
+                    <ul>
+                    <li> No diseñar estructuras "para futuro"</li>
+                    <li> Ni una sola línea ¿Sábe adivinar el futuro? vaya al casino.</li>
+                    </ul>
+                    <b>Es más probable reutilizar la cabeza que el código.</b>
+                </section>
+                <section>
+                    "Por las dudas?"&lt;-- NADA<br><br>
+                    ¿Qué dudas? <br>
+                    Are you talking to me?<br>
+                    ...<br>
+                    Walk on home boy<br>
+                </section>
+                <section>
+                    <h3>Si no se entiende, REFACTOR</h3>    
+                    A la escala que sea, excepto cuando se hace algo nuevo, y en urgencias.
+                </section>
+                <section>                
+                    <h3>Casi siempre NINGUNO es mejor que cualquier código</h3>
+                    Las consecuencias de culquier cambio no son fácilmente previsibles.
+                    <img src="http://i.imgur.com/1FcKXFz.gif" title="http://i.imgur.com/1FcKXFz.gif">
+                </section>
+                <section>Respect, walk
+                <audio autoplay>
+                      <source src="mp3/respect1.mp3">
+                    </audio>
+            </section>
+            </div>
+        </div>
+        <script src="js/reveal.js"></script>
+        <script src="js/highlight.js"></script>
+        <script>
+            Reveal.initialize();
+        </script>
+    </body>
+</html>
+
