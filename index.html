@@ -15,17 +15,17 @@
                 <section>                                                 
                  <h4>Belleza incremental..just say NO</h4>                    
                     <ul>
-                    <li>   Primero el latido, detalles después</li>
+                    <li>   Primero el latido, los detalles después</li>
                         (mejor aún, nunca)<br>
                     <li>El Origen es mítico, nunca causa-efecto</li>                    
-                    <li>"Causa y Efecto" cosa de historiadores, fábulas.</li>
-                    <li>Conexión con obra final es incomprensible.</li>                    
+                    <li>Causa y Efecto, cosas de historiadores, fábulas.</li>
+                    <li>La conexión con la obra final es incomprensible.</li>                    
                     </ul>
                  </section>       
                  <section>
                     <h4>Belleza incremental..just say NO</h4>
-                     <i>"Así como &pi; no puede sospecharse entre los infinitos términos de una serie que la calcule, menos aún aparecer literalmente entre ellos; una gran obra nunca figura ni se deduce de los términos en la secuencia de construcción. La belleza de una persona no se encuentra entre los pliegues de los genitales peludos de sus progenitores, aunque hubieran sido necesarios durante el proceso de reproducción."</i>
-
+                     <i>"Así como &pi; no puede sospecharse entre los infinitos términos de una serie que la calcule, menos aún aparecer literalmente entre ellos, una gran obra nunca figura ni se deduce de los términos de su secuencia de construcción"<br>
+                        "La belleza de una persona no se encuentra entre los pliegues de los genitales peludos de sus progenitores, aunque hubieran sido necesarios durante el proceso de reproducción."</i>
                  </section>
                  
                 <section><h4>Pureza, independencia, desacople</h4><br>
@@ -40,11 +40,11 @@
                 <div>
                 <img src="img/PanteraProjectsInTheJungle.jpg" title="https://upload.wikimedia.org/wikipedia/en/thumb/7/73/PanteraProjectsInTheJungle.jpg/220px-PanteraProjectsInTheJungle.jpg">			  	
                 </div>
-                Projects in the Jungle<br>
+                    <i>Projects in the Jungle</i><br>
                 </section>					
                 <section><h4>Tipos</h4>
                     <ul>
-                    <li>Dan sentido al compilador (sino usar javascript o hacer diseño gráfico)</li>                
+                    <li>Le dan sentido al compilador (sino usar javascript o hacer diseño gráfico)</li>                
                     <li>En C facilitan más al compilador para encajar con el micro, que al programador</li>
                     <li>Tipos primitivos: evitar</li>
                     </ul>
@@ -53,7 +53,7 @@
                 <section><h4>Tipos primitivos, casos necesarios</h4>                    
                     
                     <ul>
-                    <li>Para bytes, enteros, long usar &lt;stdint.h&gt;</li>                    
+                    <li>Datos cercanos a hard como bytes, enteros: usar &lt;stdint.h&gt;</li>                    
                     <li>Para declarar tipos "compuestos" (typedef struct), disfraza a C de "fuertemente" tipado</li>                    
                     </ul>
                     <pre><code data-trim data-noescape>
@@ -88,21 +88,22 @@
                     No usar, salvo necesidad extrema.<br>
                 </section>
                 <section><h3>Tipos Bit/Boolean</h3>
-                    No usar. False.
+                    False.No usar.<br>
+                    Una macros útiles para bits:
                     <pre><code data-trim data-noescape>
 #define SETBIT(var, nbit) ((var)|=(1UL<<(nbit)))
 #define CLRBIT(var, nbit) ((var)&=(~(1UL<<(nbit))))
 #define BITAT(var, nbit) ((var)&(1<< (nbit)))
                     </code></pre>
                 </section>
-                <section><h3>Para chequear 1 / 0</h3>
+                <section><h3>Para chequear "booleans"</h3>
                     <pre><code data-trim data-noescape>
-                    if ( x!=0 ), mejor que if ( x==0 ).
+                    if ( x!=0 ), mejor que if ( x==1 )-
                     </code></pre>
                      Pero mejor aún constantes con nombres, enums, etc..
                      Obviamente NO a los magic numbers.
                     <pre><code data-trim data-noescape>
-                    if ( MUSICA != PANTERA  ) { 
+                    if ( musica != PANTERA  ) { 
                        break;
                     }
                     </code></pre>
@@ -110,7 +111,7 @@
                 </section>                       
                 <section>                                                               
                     <h3><i>int</i> es enemigo, un mal innecesario</h3>
-                    Aceptarlo, conocerlo,  default en constantes, esa basura convivirá con C hasta que se extinga en el infierno.  
+                    aceptarlo, conocerlo, es tipo default en constantes, esa basura convivirá con C hasta que se extinga en el infierno.  
                 </section>                                                                                                       
                 <section>
                     <h3>Periféricos, y DMA are friends</h3>
@@ -164,7 +165,7 @@
                     <h3>Estados</h3>
                     NO. Ni globales, ni "static".<br>
                     <br>
-                    Ok, admisibles algunos buffers y banderitas para que la amiga ISR nos informe.<br>                                        
+                    Ok, se admiten algunos buffers y banderitas para que la amiga ISR nos informe.<br>                                        
                 </section>                
                 <section>
                     <h3><i>inline</i> functions</h3>
@@ -173,42 +174,42 @@
                 <section>
                     <h3><i>volatile</i></h3>                    
                     no confiar en el compilador.<br> 
-                    volatile, ok, pero no evita accesos no-atómicos, no es para eso. <br>
+                    volatile, ok, pero no evita accesos no-atómicos,<br> 
+                    no es para eso. <br>
                     Solución : ninguna, salvo horrible disable IRQ, CRITICAL_SECTION's<br>
-                    Minimizar las variables compartidas con ISR
-               </section>
+                    minimizar lo compartido con ISR
+               </section>                
             <section><h3>Varios</h3>
                     <ul>                    
                     <li> Usar git</li>
-                    <li> Manejo de dependencias, elegir simple de configurar, mudable.</li> 
-                    <li> Frameworks, no usar.</li>                 
+                    <li> Manejo de dependencias, elegir uno fácil de migrar.</li> 
+                    <li> Manejo de compilacin, elegir uno fácil de migrar.</li> 
+                    <li> Frameworks, no usar, ninguno es fácil de migrar.</li>                 
                     <li> Datos: JSON (world peace of data format), si se necesita DB, usar clásicas, viejas. Contratar a alguien.</li>
                     </ul>
-            </section>
-                <section>
-                <h3>Futuro</h3>
-                No.
-                    <ul>
-                    <li> No diseñar estructuras "para futuro"</li>
-                    <li> Ni una sola línea ¿Sábe adivinar el futuro? vaya al casino.</li>
-                    </ul>
-                    <b>Es más probable reutilizar la cabeza que el código.</b>
-                </section>
-                <section>
-                    "Por las dudas?"&lt;-- NADA<br><br>
-                    ¿Qué dudas? <br>
-                    Are you talking to me?<br>
-                    ...<br>
-                    Walk on home boy<br>
-                </section>
+            </section>                
                 <section>
                     <h3>Si no se entiende, REFACTOR</h3>    
                     A la escala que sea, excepto cuando se hace algo nuevo, y en urgencias.
                 </section>
                 <section>                
                     <h3>Casi siempre NINGUNO es mejor que cualquier código</h3>
-                    Las consecuencias de culquier cambio no son fácilmente previsibles.
+                    Las consecuencias de culquier cambio no son fácilmente previsibles.<br>
                     <img src="http://i.imgur.com/1FcKXFz.gif" title="http://i.imgur.com/1FcKXFz.gif">
+                </section>
+                <section>
+                <h3>Futuro</h3>                
+                    <ul>
+                    <li> No.No diseñar estructuras "para futuro"</li>
+                    <li> Ni una sola línea ¿adivina el futuro? vaya al casino.</li>
+                    </ul>
+                    Es más probable reutilizar la cabeza que el código.
+                </section>
+                <section>
+                    "Por las dudas?"&lt;-- NADA<br><br>
+                    ¿Qué dudas? <br><br>
+                    Are you talking to me?<br>
+                    ...walk on home boy<br>
                 </section>
                 <section>Respect, walk
                 <audio autoplay>
