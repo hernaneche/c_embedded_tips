@@ -11,7 +11,16 @@
                     
                 </section>                    
                 <section><h4>Premature optimization is the root of all evil</h4>
-                </section>                            
+                </section> 
+                <section>                                 
+                Luego de 10 años de desarrollos, el 4 de Junio de 1996, llegó el lanzamiento.
+                Luego de 37 segundos en el aire, el cohete de la ESA(European Space Agency) pasó a ser una bola de fuego.
+                El Inertial Navigation System (INS) (basicamente apunta la dirección del flujo del propelente del cohete,para mantenerlo en dirección. 
+                Este sistema hizo una conversión de 64-bit float, a 16-bit signed (probablemente a int) y causó un overflow.
+                Los chequeos de esa conversión se habían dado por supuestos al usar una versión anterior y no se repitieron por "optimización de código"
+                El hardware se detuvo, el control pasó a la unidad de respaldo, la cual era idéntica, con bug y todo, falló también.
+                Causó la destrucción de la nave en vuelo. 
+                </section>                
                 <section>                                                 
                  <h4>Belleza incremental..just say NO</h4>                    
                     <ul>
@@ -187,8 +196,8 @@
                     <li> Frameworks, no usar, ninguno es fácil de migrar.</li>                 
                     <li> Datos: JSON (world peace of data format), si se necesita DB, usar clásicas, viejas. Contratar a alguien.</li>
                     </ul>
-            </section>                
-                <section>
+            </section>    
+              <section>
                     <h3>Si no se entiende, REFACTOR</h3>    
                     A la escala que sea, excepto cuando se hace algo nuevo, y en urgencias.
                 </section>
@@ -203,6 +212,7 @@
                     <li> No.No diseñar estructuras "para futuro"</li>
                     <li> Ni una sola línea ¿adivina el futuro? vaya al casino.</li>
                     </ul>
+                    Hello? Anybody home? ? Think, McFly! Think!<br>
                     Es más probable reutilizar la cabeza que el código.
                 </section>
                 <section>
