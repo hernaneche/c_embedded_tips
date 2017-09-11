@@ -19,7 +19,7 @@
                  </section>                                 
                  <section>                                                         
                     <h4> Ariadne 5 </h4>                
-                El Inertial Navigation System (INS), que hace los cálculos para apuntar el flujo del propelente del cohete para mantenerlo en dirección.<br>
+                El Inertial Navigation System (INS), que hace los cálculos para apuntar el flujo del propelente del cohete y mantenerlo en dirección.<br>
                 Convirtió un float grande de 64-bit, a un 16-bit signed ( un Integer del lenguaje Ada), esto causó un overflow.<br>                     
                 Aparentemente la función había sido usada en una misión anterior para algo diferente, los chequeos de esa conversión se dieron por supuestos, y no se repitieron por "optimizar"(?)<br>
                  </section>
@@ -27,48 +27,46 @@
                     <h4> Ariadne 5 </h4>                
                 El hardware se detuvo, el control pasó a la unidad de respaldo, idéntica, con bug y todo, falló también.<br>
                 La computadora interpretó cualquier cosa como datos correctos, desvió la boquilla, el cohete giró al extremo y quedó sujeto a fuerzas para las que no estaba diseñado.<br>
-                Destrucción total de la nave en vuelo. 
+                Explotó en pleno vuelo. 
                  </section>                
                 <section>                                                 
-                 <h4>Belleza incremental..just say NO</h4>                    
+                 <h4>A la belleza incremental..just say NO</h4>                    
                     <ul>
                     <li>   Primero el latido, los detalles después</li>
                         (mejor aún, nunca)<br>
-                    <li>El Origen es mítico, no explicable</li>                    
+                    <li>El Origen es mítico, no explicable</li>
                     <li>Causa y Efecto, cosas de historiadores, fábulas.</li>
                     <li>La conexión con la obra final es incomprensible.</li>                    
                     </ul>
                  </section>       
                  <section>
-                    <h4>Belleza incremental..just say NO</h4>
+                    <h4>A la belleza incremental..just say NO</h4>
                      <i>"Así como &pi; no puede sospecharse entre los infinitos términos de una serie que la calcule, menos aún aparecer literalmente entre ellos, una gran obra nunca figura ni se deduce de los términos de su secuencia de construcción"<br><br>
                         "La belleza de una persona no se encuentra entre los pliegues de los genitales peludos de sus progenitores, aunque hubieran sido necesarios durante el proceso de reproducción."</i>
                  </section>
                  
-                <section><h4>Pureza, independencia, desacople</h4><br>
-                    Fantasías
+                <section><h4>La pureza, independencia, desacople</h4><br>
+                    Son fantasías
                 </section>								
-                <section><h4>Interdependencia Teórica</h4> 
+                <section><h4>La Inter-dependencia en Teoría</h4> 
                     <img style="width:40%" src="img/mc_escher_bird_design_fragment0001.jpg" title="http://rstessellation.wikispaces.com/file/view/mc_escher_bird_design_fragment0001.jpg"><br>
                     <img src="img/Pentagonal_tiling_type_9_animation.gif" title="https://en.wikipedia.org/wiki/Pentagonal_tiling#/media/File:Pentagonal_tiling_type_9_animation.gif">			  	
                 </section>					
 
-                <section><h4>Interdependencia Real</h4> 
+                <section><h4>La Inter-dependencia en la Práctica</h4> 
                 <div>
                 <img src="img/PanteraProjectsInTheJungle.jpg" title="https://upload.wikimedia.org/wikipedia/en/thumb/7/73/PanteraProjectsInTheJungle.jpg/220px-PanteraProjectsInTheJungle.jpg">			  	
                 </div>
                     <i>Projects in the Jungle</i><br>
                 </section>					
-                <section><h4>Tipos</h4>
+                <section><h4>Tipos de Datos</h4>
                     <ul>
                     <li>Le dan sentido al compilador (sino usar javascript o hacer diseño gráfico)</li>                
                     <li>En C facilitan más al compilador para encajar con el micro, que al programador</li>
                     <li>Tipos primitivos: evitar</li>
                     </ul>
                 </section>
-
-                <section><h4>Tipos primitivos, casos necesarios</h4>                    
-                    
+                <section><h4>Tipos primitivos, casos necesarios</h4>                                        
                     <ul>
                     <li>Datos cercanos a hard como bytes, enteros: usar &lt;stdint.h&gt;</li>                    
                     <li>Para declarar tipos "compuestos" (typedef struct), disfraza a C de "fuertemente" tipado</li>                    
