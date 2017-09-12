@@ -1,36 +1,30 @@
 <!DOCTYPE html>
 <html lang="es">
     <head>
-        <meta charset="utf-8"/> 		<link rel="stylesheet" href="css/reveal.css">
-        <link rel="stylesheet" href="css/black.css">        
+        <meta charset="utf-8"/><link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/black.css">
     </head>
     <body>
         <div class="reveal">
             <div class="slides">			    
                 <section><h3>A lesson learned in life <br> Known from the dawn of time</h3>
-                    
                 </section>                    
                 <section><h4>Premature optimization is the root of all evil</h4>
                 </section> 
                 <section>                                 
-                    <h4> Ariadne 5 </h4>
-                Según la leyenda, Ariadne 5 fue un cohete de la European Space Agency(ESA), que el 4 de Junio de 1996, después de 10 años de desarrollos, tuvo su lanzamiento.<br>
-                Y en 37 segundos de estar en el aire, pasó a ser una bola de fuego.<br>
-                 </section>                                 
-                 <section>                                                         
-                    <h4> Ariadne 5 </h4>                
-                El Inertial Navigation System (INS), que hace los cálculos para apuntar el propelente del cohete y mantenerlo en dirección,
-                convirtió un float grande de 64-bit a un 16-bit signed (un Integer del lenguaje Ada) causando overflow.<br>                     
-                Esa función había sido usada en una misión anterior para algo diferente, los chequeos de la conversión se dieron por supuestos, y no se repitieron por "optimizar"(?)<br>
+                <h4> Ariadne 5 </h4>
+                Ariadne 5, un cohete de la European Space Agency, fue lanzado el 4 de Junio de 1996.<br>
+                37 segundos después era una bola de fuego.<br>
+                    
+                El módulo "Inertial Navigation System" que hacía los cálculos para apuntar el propelente del cohete y mantenerlo dirección,
+                convirtió un float grande de 64-bit a un 16-bit signed (un Integer de lenguaje Ada) causando overflow.<br>                     
+                No se chequeó la conversión, ¿por "optimizar"?<br>
                  </section>
                 <section>
-                    <h4> Ariadne 5 </h4>                
-                El hardware se detuvo, el control pasó a la unidad de respaldo, idéntica, con bug y todo, falló también.<br>
+                <h4> Ariadne 5 </h4>                
+                El hardware se detuvo, tomó el control la unidad de respaldo, idéntica, con error y todo, falló también.<br>
                 La computadora interpretó como válidos datos fuera de rango, desvió la boquilla, el cohete giró al extremo y quedó expuesto a fuerzas para las que no estaba diseñado.<br>
                 Explotó en pleno vuelo. 
-                 </section>                
-                <section>                               
-                    <h4> Ariadne 5 </h4>                
                 <img src="img/ariadne5.gif" title="http://www.yourdailytrends.com/images/uploads/b746828fe1b0571b645fcaf96e01c27c.gif">
                 </section>                
                 <section>                                                   
