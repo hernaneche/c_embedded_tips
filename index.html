@@ -1,10 +1,9 @@
-<!DOCTYPE html>
 <html lang="es">
     <head>
         <meta charset="utf-8"/><link rel="stylesheet" href="css/reveal.css">
         <link rel="stylesheet" href="css/black.css">
         <!-- Code syntax highlighting -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<link rel="stylesheet" href="css/zenburn.css">
     </head>
     <body>
         <div class="reveal">
@@ -71,7 +70,7 @@
                     <li>Datos cercanos a hard: bytes, words. Usar &lt;stdint.h&gt;</li>                    
                     <li>Para declarar tipos compuestos (typedef struct) disfraza a C de "fuertemente" tipado</li>                    
                     </ul>
-                    <pre><code data-trim data-noescape>
+                    <pre><code class="hljs" data-trim data-noescape>
                     typedef struct {
                         uint32_t contador;
                         uint8_t flags;
@@ -114,19 +113,19 @@
                 <section><h3>Tipos Bit/Boolean</h3>
                     False. No usar.<br>
                     Una macros útiles para bits:
-                    <pre><code data-trim data-noescape>
+                    <pre><code class="hljs" data-trim data-noescape>
 #define SETBIT(var, nbit) ((var)|=(1UL<<(nbit)))
 #define CLRBIT(var, nbit) ((var)&=(~(1UL<<(nbit))))
 #define BITAT(var, nbit) ((var)&(1<< (nbit)))
                     </code></pre>
                 </section>
                 <section><h3>Para chequear "booleans"</h3>
-                    <pre><code data-trim data-noescape>
+                    <pre><code class="hljs" data-trim data-noescape>
                     if ( x!=0 ), mejor que if ( x==1 )
                     </code></pre>
                      Pero mejor aún constantes con nombres, enums, etc..
                      Obviamente NO a los magic numbers.
-                    <pre><code data-trim data-noescape>
+                    <pre><code class="hljs" data-trim data-noescape>
                     if ( musica != PANTERA  ) { 
                        break;
                     }
