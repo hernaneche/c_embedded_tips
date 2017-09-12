@@ -3,7 +3,7 @@
         <meta charset="utf-8"/><link rel="stylesheet" href="css/reveal.css">
         <link rel="stylesheet" href="css/black.css">
         <!-- Code syntax highlighting -->
-		<link rel="stylesheet" href="css/zenburn.css">
+        <!--link rel="stylesheet" href="css/zenburn.css"-->
     </head>
     <body>
         <div class="reveal">
@@ -15,12 +15,11 @@
                 <section>                                 
                 <h4> Ariadne 5 </h4>
                 Ariadne 5, un cohete de la European Space Agency, fue lanzado el 4 de Junio de 1996.<br>
-                37 segundos después era una bola de fuego.<br>
-                    
+                37 segundos después era una bola de fuego.<br>                    
                 El módulo Inertial Navigation System que hacía los cálculos para apuntar el propelente del cohete y mantenerlo dirección,
                 convirtió un float grande de 64-bit a un 16-bit signed (un Integer de lenguaje Ada) causando overflow.<br>                     
                 No se chequeó la conversión, ¿por optimizar?<br>
-                 </section>
+                </section>
                 <section>
                 <h4> Ariadne 5 </h4>                
                 El hardware se detuvo, tomó el control la unidad de respaldo, idéntica con el mismo error, falló también.<br>
@@ -227,11 +226,11 @@
                 <section>
                 <h4>Futuro</h4>                
                     <ul>
-                    <li> No. No diseñar estructuras "para futuro"</li>
+                    <li> No. No diseñar estructuras para futuro.</li>
                     <li> Ni una sola línea ¿adivina el futuro? vaya al casino.</li>
                     </ul>
                     <br>
-                    Hello? Anybody home? ? Think, McFly! Think!<br><br>
+                    Hello? Anybody home? Think, McFly! Think!<br><br>
                     <i>Es más probable reutilizar la cabeza que el código.</i>
                 </section>
                 <section>
@@ -240,7 +239,7 @@
                     Are you talking to me?<br>
                     ...walk on home boy<br>
                 </section>
-                <section><h4>Respect, walk/h4>
+                <section><h4>Respect, walk</h4>
                 <!--audio autoplay>
                       <source src="mp3/respect1.mp3">
                 </audio-->
@@ -248,9 +247,9 @@
             </div>
         </div>
         <script src="js/reveal.js"></script>
-        <script src="js/plugin/highlight.js"></script>
+        <!--script src="js/plugin/highlight.js"></script-->
         <script>		
-	    hljs.initHighlightingOnLoad();
+	    //hljs.initHighlightingOnLoad();
             Reveal.initialize();
         </script>
     </body>
