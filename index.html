@@ -10,7 +10,7 @@
             <div class="slides">			    
                 <section><h3>A lesson learned in life <br> Known from the dawn of time</h3>
                 </section>                    
-                <section><h4>Premature optimization is the root of all evil</h4>
+                <section><h3>Premature optimization is the root of all evil</h3>
                 </section> 
                 <section>                                 
                 <h4> Ariadne 5 </h4>
@@ -28,7 +28,7 @@
                 <img src="img/ariadne5.gif" title="http://www.yourdailytrends.com/images/uploads/b746828fe1b0571b645fcaf96e01c27c.gif">
                 </section>                
                 <section>                                                   
-                 <h4>A la belleza incremental..just say NO</h4>                                        
+                 <h3>A la belleza incremental..just say NO</h3>                                        
                     <ul>
                     <li>Primero el latido, los detalles después<br></li>
                         (mejor aún, nunca)
@@ -38,34 +38,34 @@
                     <i>La belleza de una obra no necesita estar en el proceso de construcción.</i>
                  </section>       
                  <section>
-                    <h4>A la belleza incremental..just say NO</h4>
+                    <h3>A la belleza incremental..just say NO</h3>
                      <i>"Así como &pi; no puede sospecharse entre los infinitos términos de una serie que la calcule, menos aún aparecer literalmente entre ellos. Una gran obra nunca figura ni se deduce de los términos de su secuencia de construcción"<br><br>
 
                         "La belleza de una persona no se encuentra entre los pliegues de los genitales peludos de sus progenitores, aunque hubieran sido necesarios durante el proceso de reproducción."</i>
                  </section>
                  
-                <section><h4>La pureza, independencia, desacople</h4><br>
+                <section><h3>La pureza, independencia, desacople</h3><br>
                     Son fantasías
                 </section>								
-                <section><h4>La Inter-dependencia en Teoría</h4> 
+                <section><h3>La Inter-dependencia en Teoría</h3> 
                     <img style="width:40%" src="img/mc_escher_bird_design_fragment0001.jpg" title="http://rstessellation.wikispaces.com/file/view/mc_escher_bird_design_fragment0001.jpg"><br>
                     <img src="img/Pentagonal_tiling_type_9_animation.gif" title="https://en.wikipedia.org/wiki/Pentagonal_tiling#/media/File:Pentagonal_tiling_type_9_animation.gif">			  	
                 </section>					
 
-                <section><h4>La Inter-dependencia en la Práctica</h4> 
+                <section><h3>La Inter-dependencia en la Práctica</h3> 
                 <div>
                 <img src="img/PanteraProjectsInTheJungle.jpg" title="https://upload.wikimedia.org/wikipedia/en/thumb/7/73/PanteraProjectsInTheJungle.jpg/220px-PanteraProjectsInTheJungle.jpg">			  	
                 </div>
                     <i>Projects in the Jungle</i><br>
                 </section>					
-                <section><h4>Tipos de Datos</h4>
+                <section><h3>Tipos de Datos</h3>
                     <ul>
                     <li>Le dan sentido al compilador (sino usar javascript o hacer diseño gráfico)</li>                
                     <li>En C facilitan más al compilador, para encajar con el micro, que al programador</li>
                     <li>Tipos primitivos: evitar</li>
                     </ul>
                 </section>
-                <section><h4>Tipos primitivos, casos necesarios</h4>                                        
+                <section><h3>Tipos primitivos, casos necesarios</h3>
                     <ul>
                     <li>Datos cercanos a hard: bytes, words. Usar &lt;stdint.h&gt;</li>                    
                     <li>Para declarar tipos compuestos (typedef struct) disfraza a C de "fuertemente" tipado</li>                    
@@ -79,36 +79,40 @@
                     No está de más repetir, <i>siempre</i> usar <b>&lt;stdint.h&gt;</b>
                 </section>                
                 <section>				
-                    <h4>const</h4>
+                    <h3>const</h3>
                     <i>const</i> siempre y en todos los argumentos, hasta que No compile nada. Partir de ahí.
                 </section>				  
-                <section><h4>Float, Double</h4>
+                <section><h3>Float, Double</h3>
                     No usar.
                 </section>              
                 <section>
-                    <h4>Sleeps, retardos</h4>
+                    <h3>Sleeps, retardos</h3>
                     No usar.
                 </section>                              
                 <section>
-                    <h4>Threads</h4>
+                    <h3>Threads</h3>
                     No usar.
                 </section>
                 <section>
-                    <h4>for, loops</h4>
+                    <h3>for, loops</h3>
                     1 solo.
                 </section>                
                 <section>
-                    <h4>if</h4>
+                    <h3>if</h3>
                     No usar, salvo necesidad extrema.<br>
                     Cuestionar los ifs ¿qué hace ahí?¿Por qué necesita el programa preguntar eso?<br>
                     Menos ifs, menos combinaciones, menos sorpresas y errores.<br>                    
                 </section>
                 <section>
-                    <h4>if</h4>                    
+                    <h3>if</h3>                    
 		    Evitar chequear una y otra vez en variables lo que el código ya sabe, <b>o debería saber</b>.<br>
-                    La función del programa debe estar embebida en su naturaleza, si no sabe lo que hace, no lo compensará preguntando con ifs y variables<br>
+                    La función del programa debe estar embebida en su naturaleza, si no sabe lo que hace, no lo compensará preguntando con ifs y variables<br><br>
+		    <i>«If you have to ask what jazz is, you'll never know.»</i> Louis Armstrong
+		</section>
+		<section>
+                    <h3>if</h3>                    
                     El contexto de la función, el tipo de dato de sus argumentos, la posición de ejecución,.. deben diseñarse para representar información que ahorre preguntas.<br><br>
-                    «Quod natura non dat, Salmantica non præstat»                                              
+                    <i>«Quod natura non dat, Salmantica non præstat»</i>
                 </section>
                 <section><h3>Tipos Bit/Boolean</h3>
                     False. No usar.<br>
@@ -216,7 +220,7 @@
                     A toda escala, excepto si es algo nuevo o en urgencias.
                 </section>
                 <section>                
-                    <h4>NINGUNO es mejor que cualquier código<br>(casi siempre)</h4>
+                    <h3>CERO código es mejor que cualquier código<br>(casi siempre)</h3>
                     Las consecuencias de los cambios no son fácilmente previsibles.<br>
                     <img src="img/1FcKXFz.gif" title="http://i.imgur.com/1FcKXFz.gif">
                 </section>
@@ -236,7 +240,7 @@
                     Are you talking to me?<br>
                     ...walk on home boy<br>
                 </section>
-                <section>Respect, walk
+                <section><h3>Respect, walk/h3>
                 <!--audio autoplay>
                       <source src="mp3/respect1.mp3">
                 </audio-->
